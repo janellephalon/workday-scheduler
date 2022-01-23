@@ -34,22 +34,33 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+
       <!-- Update to Show Current Date -->
       <p id="currentDay" class="lead">
+        <script text="text/javascript">
+          var userDate = moment(testDate).format('MM/DD/YYYY');
+          var userDisplay = document.getElementById(currentDay);
+          userDate.innerHTML = userDate;
+          
+          console.log(userDate)
+        </script>
       </p>
+
     </header>
 
+    <!-- Start Container -->
     <div class="container">
+
       <!-- TIMEBLOCKS HERE -->
       <div class="row">
-        <!-- Input Group: Form control by adding text on either side of the textual input -->
+          <!-- Input Group: Form control by adding text on either side of the textual input -->
           <div class="input-group"> 
             <!-- Before the textual input -->
             <div class="input-group-prepend">
               <span class="input-group-text hour">09:00 AM</span>
             </div>
             <!-- Text Area -->
-            <textarea class="form-control" aria-label="With textarea" id="9AM"></textarea>
+            <textarea class="form-control" id="9AM"></textarea>
             <!-- Save Button -->
             <button type="button" class="saveBtn"></button>
           </div>
@@ -70,7 +81,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text hour">11:00 AM</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea" id="11AM"></textarea>
+          <textarea class="form-control" id="11AM"></textarea>
           <button type="button" class="saveBtn"></button>
         </div>
       </div>
@@ -80,7 +91,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text hour">12:00 PM</span>
         </div>
-        <textarea class="form-control" aria-label="With textarea" id="12PM"></textarea>
+        <textarea class="form-control" id="12PM"></textarea>
         <button type="button" class="saveBtn"></button>
       </div>
     </div>
@@ -90,7 +101,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text hour">01:00 PM</span>
       </div>
-      <textarea class="form-control" aria-label="With textarea" id="1PM"></textarea>
+      <textarea class="form-control" id="1PM"></textarea>
       <button type="button" class="saveBtn"></button>
     </div>
   </div>
@@ -100,7 +111,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text hour">02:00 PM</span>
       </div>
-      <textarea class="form-control" aria-label="With textarea" id="2PM"></textarea>
+      <textarea class="form-control" id="2PM"></textarea>
       <button type="button" class="saveBtn"></button>
     </div>
   </div>
@@ -110,7 +121,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text hour">03:00 PM</span>
       </div>
-      <textarea class="form-control" aria-label="With textarea" id="3PM"></textarea>
+      <textarea class="form-control" id="3PM"></textarea>
       <button type="button" class="saveBtn"></button>
     </div>
   </div>
@@ -120,7 +131,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text hour">04:00 PM</span>
       </div>
-      <textarea class="form-control" aria-label="With textarea" id="4PM"></textarea>
+      <textarea class="form-control" id="4PM"></textarea>
       <button type="button" class="saveBtn"></button>
     </div>
   </div>
@@ -130,16 +141,19 @@
       <div class="input-group-prepend">
         <span class="input-group-text hour">05:00 PM</span>
       </div>
-      <textarea class="form-control" aria-label="With textarea" id="5PM"></textarea>
+      <textarea class="form-control" id="5PM"></textarea>
       <button type="button" class="saveBtn"></button>
     </div>
   </div>
 
+    <!-- End Container -->
     </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- My JS -->
+    <script src="./script.js"></script>
   </body>
 </html>
