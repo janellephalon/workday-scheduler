@@ -1,2 +1,1 @@
-# Work Day Scheduler Starter Code
-# workday-scheduler
+# Work Day Scheduler
