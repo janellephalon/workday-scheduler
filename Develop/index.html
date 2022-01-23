@@ -30,20 +30,38 @@
   </head>
   <!-- Body -->
   <body>
+
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-
-      <!-- Should Show Current Date -->
-      <p id="currentDay" class="lead"></p>
+      <!-- Update to Show Current Date -->
+      <p id="currentDay" class="lead">
+      </p>
     </header>
+
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- TIMEBLOCKS HERE -->
+      <div class="row">
+        <!-- Input Group: Form control by adding text on either side of the textual input -->
+          <div class="input-group"> 
+            <!-- Before the textual input -->
+            <div class="input-group-prepend">
+              <span class="input-group-text hour">09:00 AM</span>
+            </div>
+            <!-- Text Area -->
+            <textarea class="form-control" aria-label="With textarea" id="9AM"></textarea>
+            <!-- Save Button -->
+            <button type="button" class="saveBtn"></button>
+          </div>
+      </div>
+
+      
+
     </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- MomentJS -->
+    <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
