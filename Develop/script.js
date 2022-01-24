@@ -1,4 +1,7 @@
-// Defined Varibles 
+// Set Current Date with Moment.js 
+$("#currentDay").text(moment().format("dddd, MMMM Do"));
+
+// Time Block Variables 
 var blockOne = $("#9am");
 var blockTwo = $("#10am");
 var blockThree = $("#11am");
@@ -8,16 +11,6 @@ var blockSix = $("#02pm");
 var blockSeven = $("#03pm");
 var blockEight = $("#04pm");
 var blockNine = $("#05pm");
-var blockTen = $("#06pm");
-var blockEleven = $("#07pm");
-var blockTwelve = $("#08pm");
-var blockThirteen = $("#09pm")
-var hour = moment().hours();
-var userInput;
-var hourSpan;
-
-// Set Current Date with Moment.js 
-$("#currentDay").text(moment().format("dddd, MMMM Do"));
 
 function initPage() {
     // Console log
@@ -48,22 +41,15 @@ function initPage() {
       
       var hour5 = JSON.parse(localStorage.getItem("05:00 pm"))
       blockNine.val(hour5);
-    
-      var hour6 = JSON.parse(localStorage.getItem("06:00 pm"))
-      blockTen.val(hour6);
-    
-      var hour7 = JSON.parse(localStorage.getItem("07:00 pm"))
-      blockEleven.val(hour7);
-    
-      var hour8 = JSON.parse(localStorage.getItem("08:00 pm"))
-      blockTwelve.val(hour8);
-    
-      var hour9 = JSON.parse(localStorage.getItem("09:00 pm"))
-      blockThirteen.val(hour9);
     } 
 
 // Function to change background color according to past present, or future
+
+var hour = moment().hours();
+console.log("Current Time" + hour);
+
 function background () {
+
     $(".form-control").each(function () {
         // parseInt: convers a string into an integer 
         var currentTime = parseInt($(this).attr("id"));
@@ -88,20 +74,25 @@ function background () {
           $(this).removeClass("past");
           $(this).addClass("present");
         }
+        
     });
   }
 
 // Calling Functions 
 $(document).ready(function(){
-  initPage();
-  background();
+    initPage();
+    background();
 
   // Button Saves to localStorage 
   $(".saveBtn").on("click", function(){
+
+    var userInput;
+    var hourSpan;
+
     userInput = $(this).siblings(".form-control").val().trim();
     console.log(userInput);
     hourSpan = $(this).siblings(".input-group-prepend").text().trim();
-    console.log(hourSpan);
+    
     localStorage.setItem(hourSpan, JSON.stringify(userInput));
 
   })
