@@ -8,8 +8,10 @@ var blockSix = $("#02pm");
 var blockSeven = $("#03pm");
 var blockEight = $("#04pm");
 var blockNine = $("#05pm");
-
-// Moment.js
+var blockTen = $("#06pm");
+var blockEleven = $("#07pm");
+var blockTwelve = $("#08pm");
+var blockThirteen = $("#09pm")
 var hour = moment().hours();
 var userInput;
 var hourSpan;
@@ -18,52 +20,76 @@ var hourSpan;
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
 function initPage() {
-// Console log
-  console.log("Current Hour " + hour);
-  var hour9 = JSON.parse(localStorage.getItem("09:00 am"));
-  blockOne.val(hour9);
+    // Console log
+      console.log("Current Hour " + hour);
+      var hour9 = JSON.parse(localStorage.getItem("09:00 am"));
+      blockOne.val(hour9);
+    
+      var hour10 = JSON.parse(localStorage.getItem("10:00 am"))
+      blockTwo.val(hour10);
+      
+      var hour11 = JSON.parse(localStorage.getItem("11:00 am"))
+      blockThree.val(hour11);
+      
+      var hour12 = JSON.parse(localStorage.getItem("12:00 pm"))
+      blockFour.val(hour12);
+      
+      var hour1 = JSON.parse(localStorage.getItem("01:00 pm"))
+      blockFive.val(hour1);
+      
+      var hour2 = JSON.parse(localStorage.getItem("02:00 pm"))
+      blockSix.val(hour2);
+      
+      var hour3 = JSON.parse(localStorage.getItem("03:00 pm"))
+      blockSeven.val(hour3);
+     
+      var hour4 = JSON.parse(localStorage.getItem("04:00 pm"))
+      blockEight.val(hour4);
+      
+      var hour5 = JSON.parse(localStorage.getItem("05:00 pm"))
+      blockNine.val(hour5);
+    
+      var hour6 = JSON.parse(localStorage.getItem("06:00 pm"))
+      blockTen.val(hour6);
+    
+      var hour7 = JSON.parse(localStorage.getItem("07:00 pm"))
+      blockEleven.val(hour7);
+    
+      var hour8 = JSON.parse(localStorage.getItem("08:00 pm"))
+      blockTwelve.val(hour8);
+    
+      var hour9 = JSON.parse(localStorage.getItem("09:00 pm"))
+      blockThirteen.val(hour9);
+    } 
 
-  var hour10 = JSON.parse(localStorage.getItem("10:00 am"))
-  blockTwo.val(hour10);
-  
-  var hour11 = JSON.parse(localStorage.getItem("11:00 am"))
-  blockThree.val(hour11);
-  
-  var hour12 = JSON.parse(localStorage.getItem("12:00 pm"))
-  blockFour.val(hour12);
-  
-  var hour1 = JSON.parse(localStorage.getItem("01:00 pm"))
-  blockFive.val(hour1);
-  
-  var hour2 = JSON.parse(localStorage.getItem("02:00 pm"))
-  blockSix.val(hour2);
-  
-  var hour3 = JSON.parse(localStorage.getItem("03:00 pm"))
-  blockSeven.val(hour3);
- 
-  var hour4 = JSON.parse(localStorage.getItem("04:00 pm"))
-  blockEight.val(hour4);
-  
-  var hour5 = JSON.parse(localStorage.getItem("05:00 pm"))
-  blockNine.val(hour5);
-} 
-
-// Function to change background color according to past, present, or future
+// Function to change background color according to past present, or future
 function background () {
-  $(".form-control").each(function () {
-      var currentTime = parseInt($(this).attr("id"));
-      hour = parseInt(hour);
-      console.log(currentTime);
-      console.log(hour);
-      if (hour > currentTime) {
+    $(".form-control").each(function () {
+        // parseInt: convers a string into an integer 
+        var currentTime = parseInt($(this).attr("id"));
+        hour = parseInt(hour);
+        console.log(currentTime);
+        console.log(hour);
+  
+        if (hour > currentTime) {
+          $(this).removeClass("future");
+          $(this).removeClass("present");
           $(this).addClass("past");
-      } else if (hour < currentTime) {
+        } 
+        
+        else if (hour < currentTime) {
+          $(this).removeClass("present");
+          $(this).removeClass("past");
           $(this).addClass("future");
-      } else {
+        } 
+        
+        else {
+          $(this).removeClass("future");
+          $(this).removeClass("past");
           $(this).addClass("present");
-      }
-  });
-}
+        }
+    });
+  }
 
 // Calling Functions 
 $(document).ready(function(){
